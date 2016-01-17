@@ -1,0 +1,23 @@
+//for libvert qemu and kvm
+Libvert is simply a virtualization management library It manages both KVM and QEMU. It consists of three utilities namely – an API library, a daemon (libvirtd) and a command line tool -virsh. Libvirt is quite effective and it can manage a lot of hypervisors altogether.
+
+Hypervisor is the agent that helps you create virtual machines. He is the guy who creates and runs the guest machine and provide the host’s resource to the guest. QEMU and KVM both are able to act as hypervisor. Then why are they used together? Well, because QEMU is dumb! Well, not exactly, but it is a little slower when it comes to system which dont have hardware virtualization. So, to achieve that, we have our own very dear KVM. KVM helps QEMU to access hardware virtualization features on different architectures. It also adds the acceleration feature to the QEMU process. So, in short, when they are together, QEMU is the hypervisor/emulator and KVM is the accelerating agent.
+http://www.thegeekyway.com/kvm-vs-qemu-vs-libvirt/
+
+1)virsh :	A minimal shell around libvirt for managing VMs
+2) (libvertd )Daemon: Start and optionally enable libvirtd.service to begin system-level administration
+3) api : for  commands
+
+
+-> kvm provides virtualisation infrastructure:  
+-> qemu is like and emulator. it creates emulator and meke the machine feel that its its own machine
+hypervisor= kvm + qemu
+
+libvert is api hat interacts with hypervisor
+
+ the Qemu team focuses on hardware emulation and portability, while KVM folks focus on the kernel module (sometimes moving small parts of the emulation there, if it improves performance), and interfacing with the rest of the userspace code.
+
+When working together, KVM arbitrates access to the CPU and memory, and QEMU emulates the hardware resources (hard disk, video, USB, etc.). When working alone, QEMU emulates both CPU and hardware
+
+hw->kernal-> kvm ->
+orchestration->libvert(API's)->hypervisor

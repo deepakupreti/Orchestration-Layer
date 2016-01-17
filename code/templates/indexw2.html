@@ -1,0 +1,66 @@
+<html>
+  <head>
+  <style>
+body {
+    /*background-image: url("cloud.jpg");*/
+    width:100%;
+    height:50%;
+}
+  </style>
+    <title>Orchestration Layer</title>
+    <script type="text/javascript">
+         <!--
+            function create() {
+            	var x = document.getElementById("val").value;
+            	var y = document.getElementById("val1").value;
+               window.location="http://10.1.132.122:5000/vm/create/?name="+x+"&instance_type="+y;
+            }
+            function vmquery() {
+            	var x = document.getElementById("val").value;
+               window.location="http://10.1.132.122:5000/vm/query/?vmid="+x;
+            }
+            function destroy() {
+            	var x = document.getElementById("val").value;
+               window.location="http://10.1.132.122:5000/vm/destroy/?vmid="+x;
+            }
+             function flavours() {
+               window.location="http://10.1.132.122:5000/vm/types/";
+            }
+             function pmlist() {
+               window.location="http://10.1.132.122:5000/pm/list/";
+            }
+            function vmlist() {
+            	var x = document.getElementById("val").value;
+               window.location="http://10.1.132.122:5000/pm/pmid/listvms/?pmid="+x;
+            }
+             function pmquery() {
+            	var x = document.getElementById("val").value;
+               window.location="http://10.1.132.122:5000/pm/pmid/?pmid="+x;
+            }
+         //-->
+      </script>
+  </head>
+  <body bgcolor=white>
+
+  		<form>
+  		 <input type="text" id="val" />
+  		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  		 <input type="text" id="val1" value="Only for Instance_type" />
+  		 <br /><br />
+         <input type="button" value="Create VM" onclick="create();" />
+         <br /><br />
+         <input type="button" value="vm details" onclick="vmquery();" />
+         <br /> <br />
+         <input type="button" value="vm Destroy" onclick="destroy();" />
+         <br /> <br />
+         <input type="button" value="vm flavours" onclick="flavours();" />
+         <br /> <br />
+         <input type="button" value="Pm List" onclick="pmlist();" />
+         <br /> <br />
+         <input type="button" value="Vm List" onclick="vmlist();" />
+         <br /> <br />
+         <input type="button" value="Pm Query" onclick="pmquery();" />
+      </form>
+
+  </body>
+</html>
